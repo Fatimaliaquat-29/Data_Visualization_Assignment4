@@ -4,29 +4,45 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Spring Layout — Karate Club | A4 Data Visualization</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet"/>
 <style>
+  :root {
+    --bg-dark: #0a0a0b;
+    --bg-card: #141417;
+    --border: #2a2a2e;
+    --text-main: #f5f5f5;
+    --text-muted: #a1a1aa;
+    --gradient-ember: linear-gradient(135deg, #FF5A5F 0%, #FFB400 100%);
+    --glow: 0 8px 32px rgba(255, 90, 95, 0.15);
+  }
   *{margin:0;padding:0;box-sizing:border-box}
-  body{background:#0B0F1A;color:#E5E7EB;font-family:system-ui,sans-serif;display:flex;flex-direction:column;min-height:100vh}
-  header{background:#111827;border-bottom:1px solid #1E3A8A;padding:18px 32px}
-  header a{color:#22D3EE;text-decoration:none;font-size:13px;opacity:.8}
-  header a:hover{opacity:1}
-  h1{font-size:20px;font-weight:700;color:#E5E7EB;margin-top:4px}
-  .subtitle{font-size:13px;color:#9CA3AF;margin-top:2px}
-  main{flex:1;padding:24px 32px;display:flex;flex-direction:column;align-items:center;gap:24px}
-  .chart-wrap{background:#111827;border:1px solid #1E3A8A22;border-radius:12px;padding:20px;width:100%;max-width:1400px;text-align:center}
-  .chart-wrap img{width:100%;border-radius:8px;max-width:1360px}
-  .meta{display:flex;gap:32px;flex-wrap:wrap;justify-content:center}
-  .meta-card{background:#111827;border:1px solid #0EA5A422;border-radius:10px;padding:16px 24px;text-align:center;min-width:160px}
-  .meta-card .val{font-size:28px;font-weight:800;color:#22D3EE}
-  .meta-card .key{font-size:12px;color:#9CA3AF;margin-top:4px}
-  .insight{background:#111827;border-left:3px solid #0EA5A4;border-radius:6px;padding:16px 20px;max-width:1000px;font-size:14px;color:#9CA3AF;line-height:1.7}
-  .insight strong{color:#E5E7EB}
-  footer{text-align:center;padding:16px;font-size:12px;color:#9CA3AF;border-top:1px solid #1E3A8A22}
+  body{background:var(--bg-dark);color:var(--text-main);font-family:'Outfit',sans-serif;display:flex;flex-direction:column;min-height:100vh;
+       background-image: radial-gradient(circle at top right, rgba(255,90,95,0.05), transparent 40%),
+                         radial-gradient(circle at bottom left, rgba(255,180,0,0.05), transparent 40%);
+  }
+  header{background:rgba(10,10,11,0.8);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:20px 32px;position:sticky;top:0;z-index:10;}
+  header a{color:var(--text-muted);text-decoration:none;font-size:14px;transition:color 0.2s;}
+  header a:hover{color:#FF5A5F;}
+  h1{font-size:24px;font-weight:800;margin-top:12px;background:var(--gradient-ember);-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:inline-block;}
+  .subtitle{font-size:14px;color:var(--text-muted);margin-top:4px;font-weight:300;}
+  main{flex:1;padding:32px;display:flex;flex-direction:column;align-items:center;gap:32px}
+  .chart-wrap{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:32px;width:100%;max-width:1200px;text-align:center;position:relative;overflow:hidden;box-shadow: 0 4px 20px rgba(0,0,0,0.5);}
+  .chart-wrap img{width:100%;max-width:1100px;filter:drop-shadow(0 0 10px rgba(255,255,255,0.05));}
+  .meta{display:flex;gap:24px;flex-wrap:wrap;justify-content:center;width:100%;max-width:1200px;}
+  .meta-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:24px;text-align:center;flex:1;min-width:180px;box-shadow: 0 4px 12px rgba(0,0,0,0.2);}
+  .meta-card .val{font-size:32px;font-weight:800;color:#FF5A5F;margin-bottom:8px;}
+  .meta-card .key{font-size:13px;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;font-weight:600;}
+  .insight{background:rgba(255,90,95,0.05);border-left:4px solid #FF5A5F;border-radius:0 12px 12px 0;padding:24px 32px;width:100%;max-width:1200px;font-size:16px;color:var(--text-muted);line-height:1.8;font-weight:300;}
+  .insight strong{color:var(--text-main);font-weight:600;}
+  footer{text-align:center;padding:24px;font-size:13px;color:var(--text-muted);border-top:1px solid var(--border);font-weight:300;}
 </style>
 </head>
 <body>
 <header>
   <a href="../index.html">&#8592; Back to Dashboard</a>
+  <br/>
   <h1>Zachary's Karate Club — Spring Layout</h1>
   <p class="subtitle">Graph Visualization 2 | Force-directed Layout</p>
 </header>
@@ -41,6 +57,6 @@
     <strong>Insight:</strong> The force-directed spring layout allows the graph's natural community structure to emerge. Highly connected individuals pull together, naturally revealing the two distinct factions (the blue and red groups). You can clearly identify the "hubs" (the instructor and the administrator) acting as gravitational centers for their respective followers, while the sparsely connected nodes float on the periphery.
   </div>
 </main>
-<footer>A4 Data Visualization &nbsp;|&nbsp; Theme: Hierarchical Data & Social Network Connectivity</footer>
+<footer>A4 Data Visualization &nbsp;|&nbsp; Theme: Obsidian & Ember</footer>
 </body>
 </html>
