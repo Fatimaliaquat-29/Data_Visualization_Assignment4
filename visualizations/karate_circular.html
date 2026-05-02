@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Circular Layout — Karate Club | A4 Data Visualization</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#0B0F1A;color:#E5E7EB;font-family:system-ui,sans-serif;display:flex;flex-direction:column;min-height:100vh}
+  header{background:#111827;border-bottom:1px solid #1E3A8A;padding:18px 32px}
+  header a{color:#22D3EE;text-decoration:none;font-size:13px;opacity:.8}
+  header a:hover{opacity:1}
+  h1{font-size:20px;font-weight:700;color:#E5E7EB;margin-top:4px}
+  .subtitle{font-size:13px;color:#9CA3AF;margin-top:2px}
+  main{flex:1;padding:24px 32px;display:flex;flex-direction:column;align-items:center;gap:24px}
+  .chart-wrap{background:#111827;border:1px solid #1E3A8A22;border-radius:12px;padding:20px;width:100%;max-width:1400px;text-align:center}
+  .chart-wrap img{width:100%;border-radius:8px;max-width:1360px}
+  .meta{display:flex;gap:32px;flex-wrap:wrap;justify-content:center}
+  .meta-card{background:#111827;border:1px solid #0EA5A422;border-radius:10px;padding:16px 24px;text-align:center;min-width:160px}
+  .meta-card .val{font-size:28px;font-weight:800;color:#22D3EE}
+  .meta-card .key{font-size:12px;color:#9CA3AF;margin-top:4px}
+  .insight{background:#111827;border-left:3px solid #0EA5A4;border-radius:6px;padding:16px 20px;max-width:1000px;font-size:14px;color:#9CA3AF;line-height:1.7}
+  .insight strong{color:#E5E7EB}
+  footer{text-align:center;padding:16px;font-size:12px;color:#9CA3AF;border-top:1px solid #1E3A8A22}
+</style>
+</head>
+<body>
+<header>
+  <a href="../index.html">&#8592; Back to Dashboard</a>
+  <h1>Zachary's Karate Club — Circular Layout</h1>
+  <p class="subtitle">Graph Visualization 1 | Classic Social Network</p>
+</header>
+<main>
+  <div class="meta">
+    <div class="meta-card"><div class="val">34</div><div class="key">Members</div></div><div class="meta-card"><div class="val">78</div><div class="key">Friendships</div></div><div class="meta-card"><div class="val">Undirected</div><div class="key">Graph Type</div></div>
+  </div>
+  <div class="chart-wrap">
+    <img src="karate_circular.png" alt="Circular Layout — Karate Club"/>
+  </div>
+  <div class="insight">
+    <strong>Insight:</strong> The circular layout evenly distributes all 34 members of the karate club along a single large ring. The nodes are colored based on their ultimate club allegiance after the split (blue for Mr. Hi, red for the Officer). This layout avoids node overlap entirely and makes it easy to trace individual edge connections, showing that inter-faction friendships (edges crossing the center) were surprisingly common.
+  </div>
+</main>
+<footer>A4 Data Visualization &nbsp;|&nbsp; Theme: Hierarchical Data & Social Network Connectivity</footer>
+</body>
+</html>

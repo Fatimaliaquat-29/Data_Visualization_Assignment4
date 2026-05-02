@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Spring Layout — Flare Dataset | A4 Data Visualization</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#0B0F1A;color:#E5E7EB;font-family:system-ui,sans-serif;display:flex;flex-direction:column;min-height:100vh}
+  header{background:#111827;border-bottom:1px solid #1E3A8A;padding:18px 32px}
+  header a{color:#22D3EE;text-decoration:none;font-size:13px;opacity:.8}
+  header a:hover{opacity:1}
+  h1{font-size:20px;font-weight:700;color:#E5E7EB;margin-top:4px}
+  .subtitle{font-size:13px;color:#9CA3AF;margin-top:2px}
+  main{flex:1;padding:24px 32px;display:flex;flex-direction:column;align-items:center;gap:24px}
+  .chart-wrap{background:#111827;border:1px solid #1E3A8A22;border-radius:12px;padding:20px;width:100%;max-width:1400px;text-align:center}
+  .chart-wrap img{width:100%;border-radius:8px;max-width:1360px}
+  .meta{display:flex;gap:32px;flex-wrap:wrap;justify-content:center}
+  .meta-card{background:#111827;border:1px solid #0EA5A422;border-radius:10px;padding:16px 24px;text-align:center;min-width:160px}
+  .meta-card .val{font-size:28px;font-weight:800;color:#22D3EE}
+  .meta-card .key{font-size:12px;color:#9CA3AF;margin-top:4px}
+  .insight{background:#111827;border-left:3px solid #0EA5A4;border-radius:6px;padding:16px 20px;max-width:1000px;font-size:14px;color:#9CA3AF;line-height:1.7}
+  .insight strong{color:#E5E7EB}
+  footer{text-align:center;padding:16px;font-size:12px;color:#9CA3AF;border-top:1px solid #1E3A8A22}
+</style>
+</head>
+<body>
+<header>
+  <a href="../index.html">&#8592; Back to Dashboard</a>
+  <h1>Flare Dataset — Spring Layout</h1>
+  <p class="subtitle">Tree Visualization 2 | Force-directed Layout (Fruchterman-Reingold)</p>
+</header>
+<main>
+  <div class="meta">
+    <div class="meta-card"><div class="val">252</div><div class="key">Nodes</div></div><div class="meta-card"><div class="val">251</div><div class="key">Edges</div></div><div class="meta-card"><div class="val">Tree</div><div class="key">Structure</div></div>
+  </div>
+  <div class="chart-wrap">
+    <img src="flare_spring.png" alt="Spring Layout — Flare Dataset"/>
+  </div>
+  <div class="insight">
+    <strong>Insight:</strong> A classic Spring layout operates on attractive and repulsive forces. The root node tends to center itself, while leaf nodes are pushed to the outer boundaries. Compared to Kamada-Kawai, the Spring layout provides a slightly more organic, tangled visual representation of the software architecture, highlighting the density of classes within specific Flare packages.
+  </div>
+</main>
+<footer>A4 Data Visualization &nbsp;|&nbsp; Theme: Hierarchical Data & Social Network Connectivity</footer>
+</body>
+</html>
